@@ -30,10 +30,13 @@ build/Release
 node_modules
 jspm_packages
 
+<<<<<<< HEAD
 
 # bower static file
 bower_components
 
+=======
+>>>>>>> 4f98ebbfcaa5a28bf7ac806fb3fcb10ff2112c1e
 # Optional npm cache directory
 .npm
 
