@@ -44,7 +44,9 @@ exports.signin = function(req, res) {
     }
 
     if(!user) {
-      return res.redirect('/')
+      return res.render('signin', {
+        error: '用户名或密码错误'
+      })
     }
 
     user.comparePassword(password, function(err, isMatch) {
@@ -100,8 +102,8 @@ exports.signinRequired = function(req, res, next) {
 
 exports.adminRequired = function(req, res, next) {
   var user = req.session.user
-  if(user.role <= 10) {
-    return res.redirect('/signin')
-  }
+  // if(user.role <= 10) {
+  //   return res.redirect('/signin')
+  // }
   next()
 }

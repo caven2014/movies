@@ -1,7 +1,12 @@
 extends ../layout
 block content
   .container
+    
     .row
+      .alert.alert-danger(role="alert")
+        button.close(data-dismiss="alert" aria-label="Close")
+          span(aria-hidden="true") &times;
+        .alert-link #{error} &nbsp;
       form(method='post', action='/user/signin')
         .modal-header 登录
         .modal-body
@@ -10,7 +15,7 @@ block content
             input#signinName.form-control(name='user[name]', type='text')
           .form-group
             label(for='signinpassword') 密码
-            input#signinpassword.form-control(name='user[password]', type='text')
+            input#signinpassword.form-control(name='user[password]', type='password')
         .modal-footer
           button.btn.btn-default(type='button', data-dismiss='modal') 关闭
           button.btn.btn-success(type='submit') 提交
